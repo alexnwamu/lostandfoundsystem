@@ -105,7 +105,7 @@ const AdminLogin = () => {
       </div>
       <Link href={"/"} className="w-[475px] pl-[35px] mt-12 gap-2 inline-flex">
         {" "}
-        <ArrowLeft /> Go to CLFS website
+        <ArrowLeft /> Go to CLFS website.
       </Link>
     </main>
   );
