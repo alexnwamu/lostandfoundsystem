@@ -2,32 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.reportbutton{
+    border-radius: 15px;
+background: var(--Gradient-button, linear-gradient(270deg, #C41A2E 8.28%, rgba(230, 54, 12, 0.61) 58.61%, rgba(196, 26, 46, 0.82) 108.94%));
+}
+.adminlogo{
+background: var(--Gradient-button, linear-gradient(270deg, #C41A2E 8.28%, rgba(230, 54, 12, 0.61) 58.61%, rgba(196, 26, 46, 0.82) 108.94%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+
