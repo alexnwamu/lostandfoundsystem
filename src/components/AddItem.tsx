@@ -34,7 +34,9 @@ const AddItem = ({ categories }: any) => {
   const [open, setOpen] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
 
+
   const [fileName, setFileName] = useState("No file chosen");
+    //@ts-ignore
   const [state, formAction] = useFormState(addItem, true);
   useEffect(() => {
     setOpen(false);
