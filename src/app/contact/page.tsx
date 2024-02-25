@@ -6,6 +6,7 @@ import "../globals.css";
 import { toast } from "@/components/ui/use-toast";
 import { Suspense } from "react";
 import { useSession } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 interface FormData {
   name: string;
   itemTag: string;
@@ -14,6 +15,8 @@ interface FormData {
 }
 const ContactUsPage = () => {
   let tag: any = "";
+    let params: any = '';
+    params = useSearchParams();
   if (typeof window !== "undefined") {
     // browser code
 
@@ -21,6 +24,7 @@ const ContactUsPage = () => {
 
     tag = query.get("tag");
   }
+    tag = params.get("tag");
   const { data: session } = useSession();
 
   const [formData, setFormData] = useState<FormData>({

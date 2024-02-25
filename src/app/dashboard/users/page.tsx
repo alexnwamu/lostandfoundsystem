@@ -1,6 +1,7 @@
 import React from "react";
 import { format } from "date-fns/format";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import prisma from "@/lib/db";
 import {
   TableHead,
   TableRow,
