@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import { contactus } from "../../../assets";
+import { contactus } from "@/../assets";
 import "../globals.css";
 import { toast } from "@/components/ui/use-toast";
 import { Suspense } from 'react'
