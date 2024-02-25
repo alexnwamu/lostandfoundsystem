@@ -24,12 +24,12 @@ const ViewItem = ({ item }: any) => {
   return (
     <Dialog>
       <DialogTrigger className="text-[#05FF00] text-[18px]">View</DialogTrigger>
-      <DialogContent className="max-w-[1023px] p-[32px] flex flex-col text-[#615C61]">
+      <DialogContent className="max-w-[1024px] p-[32px] flex flex-col text-[#615C61] max-h-[80%] overflow-y-auto">
         <DialogTitle className="font-semibold text-[61px] text-center ">
           {item.name}{" "}
         </DialogTitle>
         <hr className="text-[#615C6169] w-full" />
-        <div className="mt-[64px] flex  gap-9 ">
+        <div className="flex  gap-9 mt-[64px]">
           <div className="w-[507px] h-[431px] relative rounded-[20px]">
             <Image
               src={item.image}

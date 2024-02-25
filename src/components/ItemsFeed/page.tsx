@@ -60,7 +60,7 @@ const ItemsFeed = ({ itemData, activeCategory }: Props) => {
                 </h3>
               </div>
             </DialogTrigger>
-            <DialogContent className="max-w-[1110px] ">
+            <DialogContent className="max-w-[1110px] overflow-y-auto max-h-[90%] ">
               <h1 className="text-[#615C61] text-[66px] font-semibold text-center">
                 {item.name}{" "}
               </h1>

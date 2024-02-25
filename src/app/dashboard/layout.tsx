@@ -15,14 +15,19 @@ export default async function DashboardLayout({
   if (session?.user.role === "ADMIN") {
     return (
       <main>
-        <div>
+        <div className=" z-50 w-full fixed">
           <AdminNavbar />
         </div>
-        <div className="flex">
-          <div>
+        <div className="flex relative">
+          <div className="fixed z-40 bg-white h-full  left-0 top-[100px]">
             <SideBar />
           </div>
-          {children}
+        <div className="mt-[100px] relative pl-[25%] z-0 w-full">
+                        {children}
+{/* footer*/}
+<div className="  bg-[#FCF5EF]  bottom-0 w-full  z-0 border-t border-[#808080] left-[150px] pt-[29px] pb-[48px] text-center text-[#FE8116]"> © Copyright CLFIS. All Rights Reserved
+                        </div>
+                    </div>
         </div>
       </main>
     );

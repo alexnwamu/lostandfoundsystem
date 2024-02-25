@@ -4,7 +4,7 @@ import React from "react";
 import UserAccountNav from "../UserAccountNav/page";
 const AdminNavbar = () => {
   return (
-    <nav className="flex   justify-between items-center bg-white h-[102px] z-50 shadow-xl">
+    <nav className="flex   justify-between items-center bg-white h-[102px] z-50 shadow-lg">
       <div className="adminlogo text-[48px] font-medium ml-[50px]">CLFIS</div>
 
       <div className="mr-[22px]">

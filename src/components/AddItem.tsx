@@ -51,7 +51,7 @@ const AddItem = ({ categories }: any) => {
         onInteractOutside={(e) => {
           e.preventDefault();
         }}
-        className="max-w-[1024px]"
+        className="max-w-[1024px] max-h-[80%] overflow-y-auto"
       >
         <DialogTitle>New Item Entry</DialogTitle>
         <hr className="text-[#E3E3E3] bg-[#E3E3Eh=3] w-full" />

@@ -23,7 +23,7 @@ const MessagesPage = async () => {
         Dashboard / <span className="text-[#555555]">Inquires</span>
       </p>
 
-      <div className=" px-[27px] bg-white rounded-[15px] pt-[40px] flex flex-col  w-[90%]">
+      <div className=" px-[27px] bg-white rounded-[15px] py-[40px] flex flex-col  w-[90%]">
         <hr className="text-[#E3E3E3] bg-[#E3E3E3]" />
         <Table className="min-w-[500px] text-[18px]">
           <TableHeader className="font-medium">

@@ -23,7 +23,7 @@ const ViewMessage = ({ message }: any) => {
   return (
     <Dialog>
       <DialogTrigger className="text-[#05FF00] text-[18px]">View</DialogTrigger>
-      <DialogContent className="max-w-[1028px] flex flex-col ">
+      <DialogContent className="max-w-[1028px] max-h-[80%] overflow-y-auto flex flex-col ">
         <DialogTitle className="font-semibold ">View Inquires</DialogTitle>
         <div className="mt-[49px]">
           <h1 className="text-[25px] font-semibold">

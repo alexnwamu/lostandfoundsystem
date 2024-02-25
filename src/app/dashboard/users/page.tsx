@@ -17,13 +17,13 @@ const UserPage = async () => {
   const session = await getServerSession(authOptions);
   const users = await prisma?.user.findMany();
   return (
-    <div className="h-screen bg-[#FCF5EF] overflow-hidden  w-full pl-[40px] z-10 ">
+    <div className="h-screen bg-[#FCF5EF] overflow-hidden  w-full pl-[40px]  z-10 ">
       <h1 className="text-[27px] font-semibold mt-[56px]"> User List</h1>
       <p className="text-[#8E8E8E] font-semibold mb-8 ">
         Dashboard / <span className="text-[#555555]">User List</span>
       </p>
 
-      <div className=" px-[27px] bg-white rounded-[15px] pt-[40px] flex flex-col  w-[90%]">
+      <div className=" px-[27px] bg-white rounded-[15px] py-[40px] flex flex-col  w-[90%]">
         <hr className="text-[#E3E3E3] bg-[#E3E3E3]" />
         <Table className="min-w-[500px] text-[18px]">
           <TableHeader className="font-medium">

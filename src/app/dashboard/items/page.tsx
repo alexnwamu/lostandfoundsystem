@@ -16,13 +16,13 @@ const items = await prisma?.item.findMany()
     const categories = await prisma?.category.findMany()
   return (
 
-        <div className="h-screen bg-[#FCF5EF] overflow-hidden  w-full pl-[40px] z-10 ">
+        <div className="h-screen bg-[#FCF5EF] overflow-hidden   w-full pl-[40px] z-10 ">
 
       <h1 className="text-[27px] font-semibold mt-[56px]">Manage Item</h1>
       <p className="text-[#8E8E8E] font-semibold mb-8 ">
         Dashboard / <span className="text-[#555555]">Manage Item</span>
       </p>
-      <div className=" px-[27px] bg-white rounded-[15px] pt-[40px] flex flex-col  w-[90%]">
+      <div className=" px-[27px] bg-white rounded-[15px] py-[40px] flex flex-col  w-[90%]">
         <AddItem categories={categories}/>
 
         <hr className="text-[#E3E3E3] bg-[#E3E3E3]" />

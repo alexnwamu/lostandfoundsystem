@@ -12,8 +12,8 @@ const Dashboard = async () => {
     <div className="h-screen bg-[#FCF5EF] overflow-hidden  w-full pl-[40px] z-10 ">
       <h1 className="text-[27px] font-semibold mt-[56px]">Home</h1>
       <p className="text-[#8E8E8E] font-semibold mb-8 ">Dashboard</p>
-      <div className="flex gap-[160px]">
-        <div className="p-[25px] rounded-[15px] bg-white w-[508px] h-[207px]">
+      <div className="flex gap-[2.2%] ">
+        <div className="p-[25px] rounded-[15px] bg-white w-[508px] shadow-lg h-[207px]">
           <h2 className="mb-[31px]">Categories</h2>
           <div className="flex justify-between">
             {" "}
@@ -21,7 +21,7 @@ const Dashboard = async () => {
             <span className="text-[37px] font-semibold">{noOfCategories}</span>
           </div>
         </div>
-        <div className="p-[25px] rounded-[15px] bg-white w-[508px] h-[207px]">
+        <div className="p-[25px] rounded-[15px] bg-white w-[508px] shadow-lg h-[207px]">
           <h2 className="mb-[31px]">Users</h2>
           <div className="flex justify-between">
             {" "}
@@ -30,8 +30,8 @@ const Dashboard = async () => {
           </div>
         </div>
       </div>
-      <div className="flex gap-[160px] mt-[50px]">
-        <div className="p-[25px] rounded-[15px] bg-white w-[508px] h-[207px]">
+      <div className="flex gap-[2.2%] mt-[50px]">
+        <div className="p-[25px] rounded-[15px] bg-white w-[508px]  shadow-lg  h-[207px]">
           <h2 className="mb-[31px]">Items</h2>
           <div className="flex justify-between">
             {" "}
@@ -39,7 +39,7 @@ const Dashboard = async () => {
             <span className="text-[37px] font-semibold">{noOfItems}</span>
           </div>
         </div>
-        <div className="p-[25px] rounded-[15px] bg-white w-[508px] h-[207px]">
+        <div className="p-[25px] rounded-[15px] bg-white w-[508px] h-[207px] shadow-lg">
           <h2 className="mb-[31px]">Messages</h2>
           <div className="flex justify-between">
             {" "}

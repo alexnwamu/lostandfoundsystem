@@ -26,7 +26,7 @@ const AddCategory = () => {
       <DialogTrigger className="w-[143px] h-[42px] text-[#FFFFFF] bg-[#FE8116] font-medium text-[18px] ml-auto  rounded-lg mb-[33px]">
         Add New
       </DialogTrigger>
-      <DialogContent className="max-w-[1024px]">
+      <DialogContent className="max-w-[67%] overflow-y-auto max-h-[90%]">
         <DialogTitle>New Category Entry</DialogTitle>
         <hr className="text-[#E3E3E3] bg-[#E3E3Eh=3] w-full" />
         <form className="w-[914px] mx-auto" action={formAction}>
