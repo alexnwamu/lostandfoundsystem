@@ -14,7 +14,7 @@ interface FormData {
 }
 
 const ContactUsPage = () => {
-  const query = new URLSearchParams(document.location.search)
+  const query = new URLSearchParams(window.location.search)
   const { data: session } = useSession();
   const tag = query.get("tag"); 
   const [formData, setFormData] = useState<FormData>({
