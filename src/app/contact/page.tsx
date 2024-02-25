@@ -12,11 +12,17 @@ interface FormData {
   subject: string;
   message: string;
 }
-
 const ContactUsPage = () => {
-  const query = new URLSearchParams(window.location.search)
+  let tag: any = "";
+  if (typeof window !== "undefined") {
+    // browser code
+
+    const query = new URLSearchParams(window.location.search);
+
+    tag = query.get("tag");
+  }
   const { data: session } = useSession();
-  const tag = query.get("tag"); 
+
   const [formData, setFormData] = useState<FormData>({
     name: session?.user?.name || "",
     itemTag: tag || "Tag (You cant edit this its only for claiming items)",
@@ -51,7 +57,7 @@ const ContactUsPage = () => {
     }
   };
   return (
-        <Suspense>
+    <Suspense>
       <main className="w-full text-[#615C61] mb-[120px] flex flex-col text-center">
         <h1 className="text-[32px] mt-[199px] mb-[32px]"> Contact us Today </h1>
         <p className="mb-[115px]">
@@ -104,7 +110,7 @@ const ContactUsPage = () => {
           </form>
         </div>
       </main>
-      </Suspense>
+    </Suspense>
   );
 };
 
