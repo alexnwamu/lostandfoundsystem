@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { contactus } from "../../../assets";
 import "../globals.css";
 import { toast } from "@/components/ui/use-toast";
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation';
 import { useSession } from "next-auth/react";
 interface FormData {
@@ -47,6 +48,10 @@ const tag= query.get('tag')
     }
   };
   return (
+        <Suspense>
+
+
+
     <main className="w-full text-[#615C61] mb-[120px] flex flex-col text-center">
       <h1 className="text-[32px] mt-[199px] mb-[32px]"> Contact us Today </h1>
       <p className="mb-[115px]">
@@ -97,6 +102,7 @@ const tag= query.get('tag')
         </form>
       </div>
     </main>
+        </Suspense>
   );
 };
 
