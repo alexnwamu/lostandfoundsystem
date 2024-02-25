@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/table";
 import AddCategory from "@/components/AddCategory/page";
 import { deleteCategory } from "@/app/action";
+import prisma from "@/lib/db";
 import DeleteCategoryButton from "@/components/DeleteCategoryButton";
 const CategoryPage = async () => {
   const categories = await prisma?.category.findMany();

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { categoryIcon, itemsIcon, messsagesIcon, usersIcon } from "../../../assets";
 
+import prisma from "@/lib/db";
 const Dashboard = async () => {
   const noOfUsers = await prisma?.user.count();
   const noOfItems = await prisma?.item.count();

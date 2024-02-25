@@ -1,5 +1,6 @@
 import React from 'react'
 
+import prisma from "@/lib/db";
 import {
   TableHead,
   TableRow,
