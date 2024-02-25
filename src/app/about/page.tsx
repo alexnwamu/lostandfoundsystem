@@ -7,7 +7,7 @@ const AboutPage = () => {
       <h1 className="text-[32px] mt-[261px] mb-[186px]">
         Discover the Heart of Lost and Found: Campus Lost and Found Items System
       </h1>
-      <p className="text-[16px] mb-[220px] mx-[202px]">
+      <p className="text-[16px] mb-[220px] ">
         Welcome to [Campus Lost and Found Items System], your centralized hub
         for reuniting lost items with their owners on our campus. We're <br/>
         dedicated to fostering community responsibility and convenience. Our
