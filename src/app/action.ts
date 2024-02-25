@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 
-export async function addItem(prevState: any, formData: FormData) {
+export async function addItem(prevState: boolean, formData: FormData) {
   const category = formData.get("category");
   const name = formData.get("title");
   const tag = formData.get("tag");
@@ -21,13 +21,13 @@ export async function addItem(prevState: any, formData: FormData) {
       },
     });
     revalidatePath("/dashboard/items");
-    return { message: "Item Added" };
+    return !(prevState);
   } catch (err) {
     console.log(err);
   }
 }
 
-export async function addCategory(prevState: any, formData: FormData) {
+export async function addCategory(prevState: boolean, formData: FormData) {
   const category = formData.get("name");
   console.log(category);
   try {
@@ -37,7 +37,7 @@ export async function addCategory(prevState: any, formData: FormData) {
       },
     });
     revalidatePath("/dashboard/categories");
-    return { message: "Category Added" };
+    return !(prevState);
   } catch (err) {
     console.log(err);
   }
@@ -81,6 +81,20 @@ export async function deleteMessage(id: string) {
     });
 
     revalidatePath("/dashboard/messages");
+  } catch (error) {
+    console.log(error);
+  }
+}
+export async function deleteItem(id: string) {
+  console.log(id);
+  try {
+    await prisma?.item.delete({
+      where: {
+        id: id,
+      },
+    });
+
+    revalidatePath("/dashboard/items");
   } catch (error) {
     console.log(error);
   }

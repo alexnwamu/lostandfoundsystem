@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import styles from "./styles.module.css";
 import React from "react";
@@ -8,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 import { useToast } from "@/components/ui/use-toast";
+import Link from "next/link";
 const LoginPage = () => {
   const router = useRouter();
   const [data, setData] = useState({ email: "", password: "" });
@@ -31,11 +33,15 @@ const LoginPage = () => {
   };
 
   return (
-    <main className="w-full  h-screen flex  ">
-      <div className="w-3/5 h-screen relative">
-        <Image src={loginbg} fill={true} alt="loginbg" />
+    <main className="w-full  h-screen flex  bg-transparent " suppressHydrationWarning>
+      <div className="w-[50%]">
+        <div className="w-full h-[90%] relative">
+          <Image src={loginbg} fill={true} alt="loginbg" />
+        </div>
+        <div className="bg-gray-800 h-[10%]"></div>
       </div>
-      <div className=" mx-auto flex flex-col justify-center ">
+
+      <div className=" rounded-l-[42px] w-[50%] bg-white  flex flex-col -ml-[30px] z-50 justify-center">
         <div className="text-center">
           <h1 className="font-semibold text-5xl mb-2">Hello Again!</h1>
           <p className="text-2xl font-normal ">
@@ -66,6 +72,12 @@ const LoginPage = () => {
 
           <button className={styles.registerbutton}>Log In</button>
         </form>
+        <Link href="/register">
+          <div className="text-center text-[#8D8D8D] mt-4">
+            Don't have an account? {" "}
+            <span className="text-[#0000FF]">Sign Up</span>
+          </div>
+        </Link>
       </div>
     </main>
   );

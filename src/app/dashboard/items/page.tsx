@@ -9,6 +9,7 @@ import {
   Table,
 } from "@/components/ui/table";
 import AddItem from '@/components/AddItem';
+import ViewItem from '@/components/ViewItem';
 const Items  = async () => {
 const items = await prisma?.item.findMany()
     const categories = await prisma?.category.findMany()
@@ -52,6 +53,7 @@ const items = await prisma?.item.findMany()
                     {item.name} 
                   </TableCell>
                   <TableCell className="border border-gray-200/30 flex justify-center">
+<ViewItem item={item}/>
                   </TableCell>
                 </TableRow>
               ))}

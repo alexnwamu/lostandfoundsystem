@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   Dialog,
@@ -11,15 +11,19 @@ import {
 
 import { useFormState } from "react-dom";
 import { addCategory } from "@/app/action";
-const initialState = {
-  message: null,
-};
+import { Submit } from "../AddItem";
+
 const AddCategory = () => {
-    // @ts-ignore
-  const [state, formAction] = useFormState(addCategory, initialState);
+  const [open, setOpen] = React.useState(false);
+
+  // @ts-ignore
+  const [state, formAction] = useFormState(addCategory, true);
+  useEffect(() => {
+    setOpen(false);
+  }, [state]);
   return (
-    <Dialog>
-            <DialogTrigger className="w-[143px] h-[42px] text-[#FFFFFF] bg-[#FE8116] font-medium text-[18px] ml-auto  rounded-lg mb-[33px]">
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger className="w-[143px] h-[42px] text-[#FFFFFF] bg-[#FE8116] font-medium text-[18px] ml-auto  rounded-lg mb-[33px]">
         Add New
       </DialogTrigger>
       <DialogContent className="max-w-[1024px]">
@@ -33,16 +37,9 @@ const AddCategory = () => {
             className="w-full rounded-[15px] border border-[#D9D9D9] outline-none p-2 mb-[55px]"
           />
           <div className="flex justify-center items-center gap-4">
-
-                
-            <DialogClose asChild>
-            <button
-              className="w-[143px] h-[42px] text-[#FFFFFF] bg-[#FE8116] rounded-lg"
-              type="submit"
-            >
-              Save
-            </button>
-            </DialogClose>
+            <div>
+              <Submit />
+            </div>
             <DialogClose asChild>
               <button className="w-[143px] h-[42px] text-[#FFF] bg-[#D6D3D0] rounded-lg">
                 Cancel

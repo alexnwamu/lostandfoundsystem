@@ -3,17 +3,20 @@ import { useEffect, useState } from 'react';
 import ItemsFeed from '@/components/ItemsFeed/page'
 import React from 'react'
 import { format } from 'date-fns'
-import { loginbg } from '../../../assets'
 interface Category {
   id: string;
   name: string;
 }
+import { useQuery } from '@tanstack/react-query';
+import SkeletonFeed from '@/components/SkeletonFeed';
+import { useSession, signIn, signOut } from "next-auth/react";
 const ReportsPage =  () => {
 
       const [items, setItems] = useState([]);
   const [categories, setCategories] = useState<Category[]>([]);
     const [activeCategory, setActiveCategory] = useState('All');
-  useEffect(() => {
+
+  const { data: session } = useSession();
     const fetchData = async () => {
       try {
         // Fetch data from the API endpoint
@@ -28,51 +31,12 @@ const ReportsPage =  () => {
       }
     };
 
-    fetchData();
-  }, []);
-    const itemData = [
-  {
-    itemname: "Chicken",
-    tag: "001",
-    dateCreated: format(Date.now(), "dd/MM/yyyy"),
-    imageUrl: loginbg,
-    category: "Laptops",
-  },
-
-  {
-    itemname: "Iphone 13",
-    tag: "001",
-    dateCreated: format(Date.now(), "dd/MM/yyyy"),
-    imageUrl: loginbg,
-
-    category: "Mobile Phones",
-  },
-
-  {
-    itemname: "Champion",
-    tag: "001",
-    imageUrl: loginbg,
-    dateCreated: format(Date.now(), "dd/MM/yyyy"),
-    category: "Mobile Phones",
-  },
-  {
-    itemname: "Iphone 12",
-    tag: "001",
-    dateCreated: format(Date.now(), "dd/MM/yyyy"),
-    imageUrl: loginbg,
-    category: "Laptops",
-  },
-
-  {
-    itemname: "Iphone 12",
-    tag: "001",
-    dateCreated: format(Date.now(), "dd/MM/yyyy"),
-    imageUrl: loginbg,
-    category: "Book",
-  },
-];
-
-  return (
+  const { isPending, error } = useQuery({
+    queryKey: ["items"],
+    queryFn: fetchData,
+  });  
+    
+  if(session){ return (
     <main className="w-full text-[#615C61]  flex flex-col">
             <div className="  mx-auto w-[1174px]  flex gap-[124px]  mt-[153px]">
                 <button onClick={() => setActiveCategory('All')} className={`${activeCategory ==='All' ? 'text-[#FE8116]' : '' }`}>All</button>
@@ -80,11 +44,14 @@ const ReportsPage =  () => {
             </div>
 
             <div className='mx-auto mt-[157px] mb-[333px]'>
-<ItemsFeed itemData={items} activeCategory={activeCategory}  />
+{isPending ? <SkeletonFeed/> :<ItemsFeed itemData={items} activeCategory={activeCategory}  />}
         
             </div>
     </main>
-  )
+  )}
+
+    
+  return <div className="text-center mt-4 h-screen">You must be signed in</div>;
 }
 
 export default  ReportsPage
