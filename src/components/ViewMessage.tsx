@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import {
   Dialog,
@@ -20,8 +20,9 @@ interface Message {
 import { useTransition } from "react";
 const ViewMessage = ({ message }: any) => {
   let [isPending, startTransition] = useTransition();
+  const [open, setOpen] = React.useState(false);
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger className="text-[#05FF00] text-[18px]">View</DialogTrigger>
       <DialogContent className="max-w-[1028px] max-h-[80%] overflow-y-auto flex flex-col ">
         <DialogTitle className="font-semibold ">View Inquires</DialogTitle>
@@ -35,13 +36,25 @@ const ViewMessage = ({ message }: any) => {
                 : `(#${message.tag})`}
             </span>
           </h1>
-        <p className="text-[18px] font-normal">{message.message}</p>
-        <p className="text-[#B6B6B6] italic mt-[27px] "> Reported on {format(message.createdAt, "EEEE do MMMM',' yyyy")}</p>
+          <p className="text-[18px] font-normal">{message.message}</p>
+          <p className="text-[#B6B6B6] italic mt-[27px] ">
+            {" "}
+            Reported on {format(message.createdAt, "EEEE do MMMM',' yyyy")}
+          </p>
         </div>
 
-<button 
-      onClick={() => startTransition(() => deleteMessage(message.id))}
-                    className="text-white bg-[#FE8116] w-[143px] h-[42px] rounded-[8px] mt-[50px]">delete</button>
+        <button
+          onClick={() =>
+            startTransition(() => {
+              deleteMessage(message.id);
+
+              setOpen(false);
+            })
+          }
+          className="text-white bg-[#FE8116] w-[143px] h-[42px] rounded-[8px] mt-[50px]"
+        >
+          delete
+        </button>
       </DialogContent>
     </Dialog>
   );
