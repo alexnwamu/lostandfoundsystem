@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "A lost and found system",
 };
 export default function RootLayout({
-  children,
+  children, 
 }: Readonly<{
   children: React.ReactNode;
 }>) {

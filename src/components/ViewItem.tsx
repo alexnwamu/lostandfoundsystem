@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { format } from "date-fns";
-import { deleteItem } from "@/app/action";
+import { deleteItem } from "@/app/action"; 
 interface Message {
   id: string;
   name: string;

@@ -10,7 +10,7 @@ export async function addItem(prevState: boolean, formData: FormData) {
   const description = formData.get("description");
   const image = formData.get("imgUrl");
 
-    console.log(category,name,tag,description,image);
+  console.log(category, name, tag, description, image);
   try {
     await prisma?.item.create({
       data: {
@@ -21,8 +21,23 @@ export async function addItem(prevState: boolean, formData: FormData) {
         description: description as string,
       },
     });
+    fetch("http://127.0.0.1:5000/send_emails", {
+      method: "POST",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to send emails");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.message);
+      })
+      .catch((error) => {
+        console.error("Error sending emails:", error);
+      });
     revalidatePath("/dashboard/items");
-    return !(prevState);
+    return !prevState;
   } catch (err) {
     console.log(err);
   }
@@ -38,7 +53,7 @@ export async function addCategory(prevState: boolean, formData: FormData) {
       },
     });
     revalidatePath("/dashboard/categories");
-    return !(prevState);
+    return !prevState;
   } catch (err) {
     console.log(err);
   }

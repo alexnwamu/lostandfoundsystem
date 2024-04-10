@@ -53,7 +53,7 @@ const RegisterPage = (props: Props) => {
         <div className="text-center">
           <h1 className="font-semibold text-5xl mb-2">Hello Again!</h1>
           <p className="text-2xl font-normal ">
-            What have you misplaced now?😂
+            Nice to see you, please register
           </p>
         </div>
         <form
