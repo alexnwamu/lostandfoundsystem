@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Lost and Found System
+This Lost and Found System is a web application built using TypeScript, Next.js, MongoDB, and Prisma. It includes an admin dashboard for managing lost and found items.
 
-First, run the development server:
+## Features
+User Interface: Provides a user-friendly interface for reporting lost items and searching for found items.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Admin Dashboard: Allows administrators to manage lost and found items, including adding new items, updating item status, and viewing reports.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Authentication: Secure authentication system for both users and administrators.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Database Integration: Utilizes MongoDB as the database backend, with Prisma as the ORM for seamless interaction with the database.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Real-time Updates: Provides real-time updates for users and administrators when new items are reported or found.
 
-## Learn More
+## Technologies Used
+TypeScript: Provides type safety and enhanced tooling for development.
 
-To learn more about Next.js, take a look at the following resources:
+Next.js: A React framework for building server-side rendered and static web applications.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MongoDB: A NoSQL database for storing application data.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Prisma: A modern ORM for TypeScript and Node.js, making database access easy and efficient.
 
-## Deploy on Vercel
+Tailwind CSS: A utility-first CSS framework for styling the user interface.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## View Project
+You can check out [the project](https://lostandfoundsystem.vercel.app/) - your feedback and contributions are welcome!
+For the admin dashboard[click here](https://lostandfoundsystem.vercel.app/admin)
+Dummy Email- admin@gmail.com
+Password 1234
+
+
