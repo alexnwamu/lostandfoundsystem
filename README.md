@@ -26,9 +26,12 @@ Tailwind CSS: A utility-first CSS framework for styling the user interface.
 
 
 ## View Project
-You can check out [the project](https://lostandfoundsystem.vercel.app/) - your feedback and contributions are welcome!
-For the admin dashboard[click here](https://lostandfoundsystem.vercel.app/admin)
+You can check out [the project](https://lostandfoundsystem.neftlify.app/) - your feedback and contributions are welcome!
+
+For the admin dashboard[click here](https://lostandfoundsystem.netlify.app/admin)
+
 Dummy Email- admin@gmail.com
+
 Password 1234
 
 
