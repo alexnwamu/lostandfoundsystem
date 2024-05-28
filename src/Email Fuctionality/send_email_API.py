@@ -1,4 +1,7 @@
-from flask import Flask, request, jsonify
+'''This email script has been replaced by the deployed API endpoint. 
+The script is now redundant and no longer performs any actions.'''
+
+from flask import Flask, jsonify
 import email_script
 
 app = Flask(__name__)

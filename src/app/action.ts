@@ -21,7 +21,7 @@ export async function addItem(prevState: boolean, formData: FormData) {
         description: description as string,
       },
     });
-    fetch("http://127.0.0.1:5000/send_emails", {
+    fetch("http://Activesamu3l.pythonanywhere.com/send_emails", {
       method: "POST",
     })
       .then((response) => {
