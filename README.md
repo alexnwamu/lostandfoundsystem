@@ -26,7 +26,7 @@ Tailwind CSS: A utility-first CSS framework for styling the user interface.
 
 
 ## View Project
-You can check out [the project]([https://lostandfoundsystem.neftlify.app/](https://lostandfoundsystem.netlify.app/)) - your feedback and contributions are welcome!
+You can check out [the project](https://lostandfoundsystem.neftlify.app/) - your feedback and contributions are welcome!
 
 For the admin dashboard[click here](https://lostandfoundsystem.netlify.app/admin)
 
